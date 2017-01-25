@@ -1,0 +1,36 @@
+<body>
+  <div class="container">
+    <header>
+      <h1>Ejemplo meteor-blaze ({{incompleteCount}})</h1>
+	  
+	  <label class="hide-completed">
+        <input type="checkbox" />
+        Hide Completed Tasks
+      </label>
+	  
+	  {{> loginButtons}}
+	  	  {{#if currentUser.username}}
+		<form class="modo-privado">
+			<input type="checkbox" />
+		</form>
+	  {{/if}}
+	  
+	  {{#if currentUser.username}}
+		<form class="new-task">
+			<input type="text" name="text" placeholder="Escribe para añadir nuevas tareas"/>
+		</form>
+	  {{/if}}
+	  
+	  
+	  
+	
+    </header>
+ 
+    <ul>
+      {{#each tasks}}
+        {{> task}}
+      {{/each}}
+    </ul>
+  </div>
+</body>
+ 
